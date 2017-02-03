@@ -1,6 +1,6 @@
 /***** Import required libraries *****/
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 
 // Import the user created Card component:
 import Card from './Card';
@@ -8,11 +8,14 @@ import Card from './Card';
 // Import the user created CardSection component:
 import CardSection from './CardSection';
 
+// Import our Button component:
+import Button from './Button';
+
 /***** Create the component *****/
 // AlbumDetail accepts a album param:
 const AlbumDetail = ({ album }) => {
 // Destructure elements we need out of the album:
-const { title, artist, thumbnail_image, image } = album;
+const { title, artist, thumbnail_image, image, url } = album;
 const {
   thumbnailStyle,
   headerContentStyle,
@@ -43,6 +46,14 @@ const {
           style={imageStyle}
           source={{ uri: image }}
         />
+      </CardSection>
+
+      <CardSection>
+      {/* Pass a prop called onPress to the button */}
+      {/* Linking.openURL opens/goes to the specified url link. */}
+        <Button onPress={() => Linking.openURL(url)}>
+          Buy Now
+        </Button>
       </CardSection>
     </Card>
   );
