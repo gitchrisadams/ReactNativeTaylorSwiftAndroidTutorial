@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 
 // Imports for react-native:
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 
 // Import the user created AlbumDetail component:
 import AlbumDetail from './AlbumDetail';
@@ -39,9 +39,10 @@ renderAlbums() {
     console.log(this.state);
     return (
       // Send the renderedAlbums list to the View/screen:
-      <View>
+      // Scroll View allows us to be able to scroll up/down:
+      <ScrollView>
         {this.renderAlbums()}
-      </View>
+      </ScrollView>
     );
   }
 }

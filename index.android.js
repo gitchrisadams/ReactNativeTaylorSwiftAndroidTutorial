@@ -24,7 +24,8 @@ const App = () => (
   // Everything gets wrapped in View tag so we can return single component
   // the View in this case:
   // Pass value inside { } to the header.
-  <View>
+  // flex:1 says to have content expand content to entire screen:
+  <View style={{ flex: 1 }}>
     <Header headerText={'Albums'} />
     <AlbumList />
   </View>
